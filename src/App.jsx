@@ -4,6 +4,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 // layout
 import MainLayout from './layouts/MainLayout'
 
+// loader
+import { getData } from './pages/Home'
+
 // pages
 import { Home } from './pages/index'
 
@@ -17,6 +20,7 @@ const App = () => {
           {
             index: true,
             element: <Home />,
+            loader: getData
           },
         ],
       },
