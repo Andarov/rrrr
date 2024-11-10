@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom"
 
 // util
 import { requestInstance } from "../util/request"
+import ProductCard from "../components/ProductCard"
 
 // loaderFunc
 export const getData = async ()=>{
@@ -12,9 +13,26 @@ export const getData = async ()=>{
 
 const Home = () => {
   const products = useLoaderData();
+  console.log(products);
   
   return (
-    <div>Home</div>
+    <>
+      <section className="py-10">
+        <div className="container">
+          <h2 className="text-xl font-semibold mb-5">Products</h2>
+
+          <ul className="grid grid-cols-3 gap-10">
+            {
+              products.map((product)=>{
+                return(
+                  <ProductCard product={product}/>
+                )
+              })
+            }
+          </ul>
+        </div>
+      </section>
+    </>
   )
 }
 
