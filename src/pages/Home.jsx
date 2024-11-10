@@ -1,14 +1,11 @@
-// rrd
+// rr
 import { useLoaderData } from "react-router-dom"
 
 // util
 import { requestInstance } from "../util/request"
 
 // components
-import ProductCard from "../components/ProductCard"
-
-// rr
-import { useSelector } from "react-redux"
+import {ProductCard} from "../components/index"
 
 // loaderFunc
 export const getData = async ()=>{
@@ -18,9 +15,6 @@ export const getData = async ()=>{
 
 const Home = () => {
   const products = useLoaderData();
-  const product = useSelector((state)=> state.product.value)
-  
-  console.log(product);
   
   return (
     <>

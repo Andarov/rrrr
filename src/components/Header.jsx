@@ -1,7 +1,11 @@
-import React from 'react'
+// rr
 import { Link } from 'react-router-dom'
+// rt
+import { useSelector } from 'react-redux'
 
 const Header = () => {
+  const cartProducts = useSelector((state)=> state.cart.value)
+
   return (
     <header className='py-8 bg-cyan-500'>
       <div className='flex justify-between items-center container'>
@@ -23,6 +27,8 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+
+        <Link>Cart: {cartProducts.length}</Link>
       </div>
     </header>
   )
